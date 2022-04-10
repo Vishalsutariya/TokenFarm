@@ -6,7 +6,7 @@ const TokenFarm = artifacts.require('TokenFarm')
 
 require('chai').use(require('chai-as-promised')).should()
 
-function tokens(n){
+function tokens(n) {
     return web3.utils.toWei(n, 'Ether')
 }
 
@@ -20,10 +20,10 @@ contract('TokenFarm', ([owner, investor]) => {
         tokenFarm = await TokenFarm.new(dappToken.address, daiToken.address)
 
         // Transfer all dapp token to farm (1 million)
-        await dappToken.transfer(tokenFarm.address,  tokens('1000000'))
+        await dappToken.transfer(tokenFarm.address, tokens('1000000'))
 
         // Send tokens to investors
-        await daiToken.transfer(investor, tokens('100'), {from: owner})
+        await daiToken.transfer(investor, tokens('100'), { from: owner })
     })
 
     // Tests
@@ -63,8 +63,8 @@ contract('TokenFarm', ([owner, investor]) => {
             assert.equal(result.toString(), tokens('100'), 'investor Mock DAI wallet balance correct before staking');
 
             //Stake Mock Dai Tokens
-            await daiToken.approve(tokenFarm.address, tokens('100'), { from : investor})
-            await tokenFarm.stakeTokens(tokens('100'), { from : investor})
+            await daiToken.approve(tokenFarm.address, tokens('100'), { from: investor })
+            await tokenFarm.stakeTokens(tokens('100'), { from: investor })
 
             //Check staking result
             result = await daiToken.balanceOf(investor);
@@ -78,7 +78,16 @@ contract('TokenFarm', ([owner, investor]) => {
 
             result = await tokenFarm.isStaking(investor);
             assert.equal(result.toString(), 'true', 'investor staking status correct after staking');
-            
+
+            //Issue tokens
+            await tokenFarm.issueToken({ from: owner })
+
+            //Check balance after issuance
+            result = await dappToken.balanceOf(investor)
+            assert.equal(result.toString(), tokens('100'), 'investor DApp Token wallet balance correct after issuance')
+
+            //Ensure that only owner can issue tokens
+            await tokenFarm.issueToken({ from: investor }).should.be.rejected;
         })
     })
 })
