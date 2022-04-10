@@ -12,16 +12,19 @@ contract('TokenFarm', (accounts) => {
 
     let daiToken, dappToken, tokenFarm;
     before(async () => {
-        //load contracts
+        // Load contracts
         daiToken = await DaiToken.new()
         dappToken = await DappToken.new()
         tokenFarm = await TokenFarm.new(dappToken.address, daiToken.address)
 
-        // transfer all dapp token to farm (1 million)
+        // Transfer all dapp token to farm (1 million)
         await dappToken.transfer(tokenFarm.address,  tokens('1000000'))
+
+        // Send tokens to investors
+        await daiToken.transfer(accounts[1], tokens('100'), {from: accounts[0]})
     })
 
-    //tests
+    // Tests
     describe('Mock DAI Deployment', async () => {
         it('has a name', async () => {
             const name = await daiToken.name()
