@@ -6,6 +6,7 @@ import DaiToken from '../abis/DaiToken.json'
 import DappToken from '../abis/DappToken.json'
 import TokenFarm from '../abis/TokenFarm.json'
 import Main from './Main'
+import Footerbar from './Footerbar'
 
 class App extends Component {
 
@@ -138,6 +139,7 @@ class App extends Component {
             </main>
           </div>
         </div>
+        <Footerbar />
       </div>
     );
   }

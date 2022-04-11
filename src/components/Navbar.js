@@ -14,7 +14,7 @@ class Navbar extends Component {
         >
           <img src={farmer} width="30" height="30" className="d-inline-block align-top" alt="" />
           &nbsp; DApp Token Farm
-        </a>
+        </a> 
 
         <ul className="navbar-nav px-3">
           <li className="nav-item text-nowrap d-none d-sm-none d-sm-block">
