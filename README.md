@@ -32,3 +32,6 @@ To reDeploy --> truffle migrate --reset
 To Run UI --> npm run start
 
 For Issuing Reward Tokens --> truffle exec scripts/issue-token.js
+
+<img width="1440" alt="TokenFarm Screenshot" src="https://user-images.githubusercontent.com/30944951/162667803-1aebe96f-8bee-4040-9025-f5c0b46fa0d3.png">
+
