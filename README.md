@@ -29,7 +29,9 @@ To Deploy Smart Contract to truffle --> truffle migrate
 
 To reDeploy --> truffle migrate --reset
 
-To Run UI --> npm run start
+If MetaMask and Ganache setup is done then you can use already Deployed UI from here --> https://vishal-tokenfarm-defi.netlify.app/
+
+OR To Run UI Locally --> npm run start
 
 For Issuing Reward Tokens --> truffle exec scripts/issue-token.js
 
