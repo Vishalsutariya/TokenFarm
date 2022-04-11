@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import farmer from '../farmer.png'
 
 class Footerbar extends Component {
 
