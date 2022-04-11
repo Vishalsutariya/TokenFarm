@@ -3,6 +3,8 @@ My First deFi Project
 
 TokenFarm: Where Investors can Stake their tokens and get Mock DAI tokens, also they'll get rewarded in form of DApp tokens for staking tokens to token farm.
 
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
 DEPENDENCIES 👇
 
 Node.js --> https://nodejs.org/en/
@@ -17,14 +19,16 @@ For writing smart contract --> Solidity (https://docs.soliditylang.org/en/v0.8.1
 
 For Browser Ethereum wallet --> MetaMask (Can be downloaded as extension from web store --> https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn?hl=en)
 
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
 To Compile Smart Contract --> truffle compile
+
+For Running tests --> truffle test
 
 To Deploy Smart Contract to truffle --> truffle migrate
 
 To reDeploy --> truffle migrate --reset
 
 To Run UI --> npm run start
-
-For Running tests --> truffle test
 
 For Issuing Reward Tokens --> truffle exec scripts/issue-token.js
