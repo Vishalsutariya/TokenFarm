@@ -1,5 +1,4 @@
 # TokenFarm
-My First deFi Project
 
 TokenFarm: Where Investors can Stake their tokens and get Mock DAI tokens, also they'll get rewarded in form of DApp tokens for staking tokens to token farm.
 
